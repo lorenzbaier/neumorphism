@@ -1,0 +1,47 @@
+:root {
+    --bg-color: aqua;
+}
+
+.background {
+    background: var(--bg-color);
+}
+
+.main-shape {
+    background: var(--bg-color);
+}
+
+.light-shape {
+    background-color: hsl(0, 0%, 70%);
+    opacity: 30%;
+    filter: blur(1.5rem);
+    top: -10%;
+    left: 10%;
+    z-index: -2;
+    position: absolute;
+}
+
+.dark-shape {
+    background-color: hsl(0, 0%, 30%);
+    opacity: 30%;
+    filter: blur(1.5rem);
+    top: 10%;
+    left: -10%;
+    z-index: -1;
+    position: absolute;
+}
+
+.circle {
+    width: 50vh;
+    height: 50vh;
+    border-radius: 50%;
+}
+
+.center {
+    position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  	
+	margin: auto;
+}
