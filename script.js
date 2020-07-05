@@ -12,19 +12,21 @@ window.onload = function() {
 }
 
 function mouseControl(event) {
-    var percentage = event.clientX/document.body.clientWidth;
-    setBorderRadius("circle", percentage*50);
+    var pX = event.clientX/document.body.clientWidth;
+    var pY = event.clientY/document.body.clientHeight;
+    setBorderRadius("circle", pY*50);
+    setBackground(hslToHex(pX*360, 90, 40));
 }
 
 function setBorderRadius(className, radius) {
-    radius = radius
-    var toChange = Array.from(document.getElementsByClassName(className));
+  var root = document.documentElement;
+    root.style.setProperty("--border-radius", radius+"%");
+
+    /*var toChange = Array.from(document.getElementsByClassName(className));
 
     toChange.forEach(e => {
         e.style.borderRadius = radius + "%";
-    });
-
-    setBackground(hslToHex(radius*7.2, 100, 50));
+    });*/
 }
 
 function setBackground(bg) {
